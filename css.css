@@ -39,7 +39,10 @@ body {
     padding: 0;
 }
 
-
+.shopButton{
+    margin: 0.5rem;
+    width: 3rem;
+}
 .test {
     border: 1px solid red;
 }
@@ -57,7 +60,8 @@ text-align: center;
     -webkit-box-shadow: 1px 0px 12px 5px rgba(0, 0, 0, 0.158); 
     box-shadow: 1px 0px 12px 5px #00000028;
 }
-  
+
+
 
 a{
 color: #1EB089

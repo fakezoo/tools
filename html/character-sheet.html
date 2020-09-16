@@ -49,50 +49,11 @@
 
     <div class="container mb-3 mt-3">
 
-
-
-        <!--MODIFIERS-->
-        <div class="card mt-1">
-            <div class="card-header">
-                Calculate Modifiers
-            </div>
-            <div class="card-body">
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-                <form id="form">
-
-                    <!--str-->
-                    <div class="form-row">
-                        <div class="col-7">
-                            <div class="input-group mb-2 mr-sm-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">STR</div>
-                                </div>
-                                <input type="number" min="1" max="20" class="form-control" id="1"
-                                    placeholder="STR Score">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <span id="strOutput"></span>
-                        </div>
-                    </div>
-                </form>
-                <button class="btn btn-primary mb-2" onclick="stats()">Calculate Modifiers</button>
-
-            </div>
-        </div>
-
-        <!--OUTPUT-->
-        <!--OUTPUT-->
-        <!--OUTPUT-->
-
-        <hr>
-
         <!--CHARACTER HEADER-->
         <div class="card mb-3">
             <div class="row no-gutters">
                 <div class="col-4">
-                    <img src="..." class="card-img" alt="...">
+                    <img src="" class="card-img" alt="">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -104,11 +65,12 @@
 
 
                         <!-- Button nameModal -->
-                        <button type="button" class="btn btn-dark btn-block mt-1" data-toggle="modal" data-target="#nameModal">
+                        <button type="button" class="btn btn-dark btn-block mt-1" data-toggle="modal"
+                            data-target="#nameModal">
                             <i class="fas fa-pen"></i>
                         </button>
 
-                      
+
 
 
                         <p class="card-text"></p>
@@ -118,32 +80,86 @@
             </div>
         </div>
 
+
+        <!--ABILITIES-->
         <div class="card-deck">
 
-            <div class="card bg-dark">
-
-                <!--Scores-->
-                <div class="card text-center bg-light outputCard">
-                    <div class="card-header">Strenght</div>
-                    <div class="card-body">
-                        <h5 class="card-title ">0</h5>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">0</small>
-                    </div>
-                </div>
+            <div class="card">
 
                 <div class="card text-center bg-light outputCard">
                     <div class="card-header">Strenght</div>
                     <div class="card-body">
-                        <h5 class="card-title">0</h5>
+                        <h5 class="card-title htmlModOutput" id="strModOutput">0</h5>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">0</small>
+                        <small class="text-muted" id="strScoreOutput">0</small>
                     </div>
                 </div>
 
 
+                <div class="card text-center bg-light outputCard">
+                    <div class="card-header">Dexterity</div>
+                    <div class="card-body">
+                        <h5 class="card-title htmlModOutput" id="dexModOutput">0</h5>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted" id="dexScoreOutput">0</small>
+                    </div>
+                </div>
+
+
+                <div class="card text-center bg-light outputCard">
+                    <div class="card-header">Constitution</div>
+                    <div class="card-body">
+                        <h5 class="card-title htmlModOutput" id="conModOutput">0</h5>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted" id="conScoreOutput">0</small>
+                    </div>
+                </div> 
+
+
+                <div class="card text-center bg-light outputCard">
+                    <div class="card-header">Intelligence</div>
+                    <div class="card-body">
+                        <h5 class="card-title htmlModOutput" id="intModOutput">0</h5>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted" id="intScoreOutput">0</small>
+                    </div>
+                </div>
+
+
+                <div class="card text-center bg-light outputCard">
+                    <div class="card-header">Wisdom</div>
+                    <div class="card-body">
+                        <h5 class="card-title htmlModOutput" id="wisModOutput">0</h5>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted" id="wisScoreOutput">0</small>
+                    </div>
+                </div>
+
+                <div class="card text-center bg-light outputCard">
+                    <div class="card-header">Charisma</div>
+                    <div class="card-body">
+                        <h5 class="card-title htmlModOutput" id="chaModOutput">0</h5>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted" id="chaScoreOutput">0</small>
+                    </div>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+
+                        <!-- Button abilityModal -->
+                        <button type="button" class="btn btn-dark btn-block" data-toggle="modal"
+                            data-target="#abilityModal">
+                            <i class="fas fa-pen"></i>
+                        </button>
+                    </li>
+                </ul>
 
             </div>
 
@@ -166,15 +182,16 @@
 
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Fears:</li>
-                    <li class="list-group-item">Dreams:</li>
-                    <li class="list-group-item">Equipment:</li>
+                    <li class="list-group-item">Fears: <span id="fearOutput"></span></li>
+                    <li class="list-group-item">Dreams: <span id="dreamOutput"></span></li>
+                    <li class="list-group-item">Equipment: <span id="shopOutput"></span></li>
 
                     <li class="list-group-item">
-                    <!-- Button fearsModal -->
-                    <button type="button" class="btn btn-dark btn-block" data-toggle="modal" data-target="#fearModal">
-                        <i class="fas fa-pen"></i>
-                    </button>
+                        <!-- Button fearModal -->
+                        <button type="button" class="btn btn-dark btn-block" data-toggle="modal"
+                            data-target="#fearModal">
+                            <i class="fas fa-pen"></i>
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -192,180 +209,265 @@
 
 
     <!-------MODALS------>
-      <!-- Name -->
-      <div class="modal fade" id="nameModal" tabindex="-1" >
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Who are you?</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <div class="modal-body">
-               
-                <form id="nameForm">
-                    <div class="form-group">
-                        <label for="nameInput">Whats your name?</label>
-                      <input type="text" class="form-control" id="nameInput" placeholder="Juli, the Microwaved">
-                    </div>
-                    <hr>
+    <!-- Name -->
+    <div class="modal fade" id="nameModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Who are you?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
 
-                    <div class="form-group">
-                        <label for="raceInput">Who are your people?</label>
-                        <select  multiple class="form-control" id="classInput">
-                          <option>👨‍🌾</option>
-                          <option>🧟</option>
-                          <option>🧞</option>
-                          <option>🧜</option>
-                          <option>🧛</option>
-                          <option>🧚</option>
-                          <option>🧝</option>
-                          <option>👽</option>
-                          <option>🤖</option>
-                          <option>👻</option>
-                          <option>😺</option>
-                          <option>💀</option>
-                        </select>
-                      </div>
+                    <form id="nameForm">
+                        <div class="form-group">
+                            <label for="nameInput">Whats your name?</label>
+                            <input type="text" class="form-control" id="nameInput" placeholder="Juli the Microwaved">
+                        </div>
+                        <hr>
 
-                      <hr>
-                    <div class="form-group">
-                      <label for="classInput">What is your fighting style?</label>
-                      <select multiple  class="form-control" id="classInput">
-                        <option>🗡️🪓</option>
-                        <option>🥋👊</option>
-                        <option>💬🕊</option>
-                        <option>🤙🎷</option>
-                        <option>🔮✨</option>
-                        <option>🏹🎯</option>
-                        <option>🙏✝</option>
-                        <option>💣💥</option>
+                        <div class="form-group">
+                            <label for="raceInput">Who are your people?</label>
+                            <select multiple class="form-control" id="classInput">
+                                <option>👨‍🌾</option>
+                                <option>🧝</option>
+                                <option>🧚</option>
+                                <option>🧛</option>
+                                <option>🧞</option>
+                                <option>🧜</option>
+                                <option>👽</option>
+                                <option>🤖</option>
+                                <option>👻</option>
+                                <option>😺</option>
+                            </select>
+                        </div>
 
-                        
-
-                      </select>
-                    </div>
-
-                  
-                    <hr>
-
-                    <div class="form-group">
-                      <label for="storyInput">Explain yourself!</label>
-                      <textarea class="form-control" id="storyInput" rows="3" placeholder="Write some backstory."></textarea>
-                    </div>
-                  </form>
-
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary"
-                      data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" onclick="nom()">Save changes</button>
-              </div>
-          </div>
-      </div>
-  </div>
+                        <hr>
+                        <div class="form-group">
+                            <label for="classInput">What is your fighting style?</label>
+                            <select multiple class="form-control" id="classInput">
+                                <option>🗡️🪓</option>
+                                <option>🥋👊</option>
+                                <option>💬🕊</option>
+                                <option>🤙🎷</option>
+                                <option>🔮✨</option>
+                                <option>🏹🎯</option>
+                                <option>🙏✝</option>
+                                <option>💣💥</option>
 
 
-  <!-- Fear -->
-  <div class="modal fade" id="fearModal" tabindex="-1" >
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Who are you?</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-             
-              <form id="fearForm">
-              
-                  <div class="form-group">
-                      <label for="fearInput">What do you fear?</label>
-                      <select  multiple class="form-control" id="fearInput">
-                      
-                        <option>🧟🧛</option>
-                        <option>💀⚰️</option>
-                        <option>🥀💔</option>
-                        <option>🕷️🦟</option>
 
-                        
-                      </select>
-                    </div>
-
-                    <hr>
-                  <div class="form-group">
-                    <label for="dreamInput">What is your ulimate goal?</label>
-                    <select multiple  class="form-control" id="dreamInput">
-                      <option>🗡️🪓</option>
-                      <option>🥋👊</option>
-                      <option>💬🕊</option>
-                      <option>🤙🎷</option>
-                      <option>🔮✨</option>
-                      <option>🏹🎯</option>
-                      <option>🙏✝</option>
-                      <option>💣💥</option>
-                    </select>
-                  </div>
-
-                
-                  <hr>
-                  <div class="form-group">
-                    <label for="dreamInput">Buy some stuff. You have 420€</label>
-                    <select multiple  class="form-control" id="dreamInput">
-                      <option>🗡️</option>
-                      <option>🪓</option>
-                      <option>🏹</option>
-                      <option>🔪</option>
-                      <option>⚔</option>
-                      <option>🛡</option>
-
-                      <option>🧱</option>
-                      <option>💣</option>
-                      <option>🧨</option>
-                      
-                      <option>💎</option>
-                      <option>🔮</option>
-                      <option>⚗</option>
-                      <option>🩸</option>
-                      <option>🩸</option>
-                      <option>🩸</option>
+                            </select>
+                        </div>
 
 
-                      <option>🪕</option>
-                      <option>🎷</option>
-                      <option>🧹</option>
+                        <hr>
 
-                      
-                      <option>🧭</option>
-                      <option>🕯</option>
-                      <option>📔</option>
-                      <option>📜</option>
-                      <option>🖋</option>
-                      <option>🗝</option>
+                        <div class="form-group">
+                            <label for="storyInput">Explain yourself!</label>
+                            <textarea class="form-control" id="storyInput" rows="3"
+                                placeholder="Write some backstory."></textarea>
+                        </div>
+                    </form>
 
-                      <option>🚬</option>
-                      <option>🔨</option>
-                      <option>🔨</option>
-                      <option>🔨</option>
-
-
-                    </select>
-                  </div>
-
-                  
-                </form>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary"
-                    data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="fear()">Save changes</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="nom()">Save changes</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+    <!--ABILITYMODAL-->
+    <div class="modal fade" id="abilityModal" tabindex="-1" aria-labelledby="abilityModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">What are you good at?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--MODIFIERS-->
+
+                    <form id="form">
+
+                        <!--str-->
+                        <div class="form-row">
+                            <div class="input-group mb-2 mr-sm-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">Strenght</div>
+                                </div>
+                                <input type="number" min="1" max="20" class="form-control" id="1"
+                                    placeholder="Input Score (1 to 20)">
+                            </div>
+                        </div>
+
+                        <!--dex-->
+                        <div class="form-row">
+                            <div class="input-group mb-2 mr-sm-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">Dexterity</div>
+                                </div>
+                                <input type="number" min="1" max="20" class="form-control" id="2"
+                                    placeholder="Input Score (1 to 20)">
+                            </div>
+                        </div>
+
+                        <!--con-->
+                        <div class="form-row">
+                            <div class="input-group mb-2 mr-sm-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">Charisma</div>
+                                </div>
+                                <input type="number" min="1" max="20" class="form-control" id="3"
+                                    placeholder="Input Score (1 to 20)">
+                            </div>
+                        </div>
+
+                        <!--int-->
+                        <div class="form-row">
+                            <div class="input-group mb-2 mr-sm-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">Intelligence</div>
+                                </div>
+                                <input type="number" min="1" max="20" class="form-control" id="4"
+                                    placeholder="Input Score (1 to 20)">
+                            </div>
+                        </div>
+
+                        <!--wis-->
+                        <div class="form-row">
+                            <div class="input-group mb-2 mr-sm-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">Wisdom</div>
+                                </div>
+                                <input type="number" min="1" max="20" class="form-control" id="5"
+                                    placeholder="Input Score (1 to 20)">
+                            </div>
+                        </div>
+
+                        <!--cha-->
+                        <div class="form-row">
+                            <div class="input-group mb-2 mr-sm-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">Charisma</div>
+                                </div>
+                                <input type="number" min="1" max="20" class="form-control" id="6"
+                                    placeholder="Input Score (1 to 20)">
+                            </div>
+                        </div>
+
+
+
+                    </form>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="stats()">Calculate Modifiers</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- FEARMODAL -->
+    <div class="modal fade" id="fearModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Who are you?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form id="fearForm">
+
+                        <div class="form-group">
+                            <label for="fearInput">What do you fear?</label>
+                            <select multiple class="form-control" id="fearInput">
+
+                                <option>🧟🧛</option>
+                                <option>💀⚰️</option>
+                                <option>🥀💔</option>
+                                <option>🕷️🐝</option>
+
+
+
+                            </select>
+                        </div>
+
+                        <hr>
+                        <div class="form-group">
+                            <label for="dreamInput">What is your ulimate goal?</label>
+                            <select multiple class="form-control" id="dreamInput">
+                                <option>🗡️🪓</option>
+                                <option>🥋👊</option>
+                                <option>💬🕊</option>
+                                <option>🤙🎷</option>
+                                <option>🔮✨</option>
+                                <option>🏹🎯</option>
+                                <option>🙏✝</option>
+                                <option>💣💥</option>
+                            </select>
+                        </div>
+
+
+                        <hr>
+                        <div class="">
+                            <p>Buy some stuff. You have 420€</p>
+                            <button type="button" class="btn btn-outline-dark shopButton">🗡️</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🪓</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🏹</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🔪</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">⚔</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🛡</button>
+
+                            <button type="button" class="btn btn-outline-dark shopButton">🧱</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">💣</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🧨</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">💎</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🔮</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">⚗</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🩸</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🪕</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🎷</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🧹</button>
+
+                            <button type="button" class="btn btn-outline-dark shopButton">🧭</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🕯</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">📔</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">📜</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🖋</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🗝</button>
+
+                            <button type="button" class="btn btn-outline-dark shopButton">🚬</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🐎</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🌿</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🔨</button>
+
+                        </div>
+
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="fear()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
