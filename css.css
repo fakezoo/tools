@@ -1,7 +1,6 @@
 *{
     outline: none !important;
     box-shadow: none !important;
-    transition: none !important;
 }
 
 
@@ -14,7 +13,7 @@ body {
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background: linear-gradient(174deg, rgba(37,76,66,1) 35%, rgba(50,105,128,1) 100%);
+    background: linear-gradient(174deg, rgba(37,76,66,1) 35%, #326980 100%);
 
 }
 
@@ -33,7 +32,6 @@ body {
     padding: 0;
 }
     
-
 
 .outputCard .card-footer{
     padding: 0;
@@ -91,7 +89,7 @@ nav .navbar{
 .btn:focus,.btn:active {
     outline: none !important;
     box-shadow: none !important;
-}
+} 
 
 .btn:hover{
     border: 1px solid white;
@@ -100,11 +98,23 @@ nav .navbar{
     transition: none;
 }
 
+/* Primary Button */
+.btn-dark{
+    transition: none !important;
+
+}
+.btn-dark:hover{
+    background: rgb(37,76,66);
+    background: linear-gradient(174deg, rgba(37,76,66,1) 35%, rgba(50,105,128,1) 100%);
+    border: transparent 1px solid;
+}
 
 /* Type Button */
 .btn-secondary{
     border: #212529 1px solid;
     background-color: #3B7D6B;
+    transition: none !important;
+
 }
 
 .btn-secondary:hover{

@@ -38,12 +38,15 @@ function stats() {
         modifierArray.push(modifier);
     }
    
-    // Find all Modifier Output HTML Elements 
+    // Find all Modifier / Score Output HTML Elements 
     var HTMLmodifierOutputs = document.getElementsByClassName("htmlModOutput");
+    var HTMLscoreOutputs = document.getElementsByClassName("htmlscoreOutput");
+
 
     // Assign each their respective modifier
-    for (let i = 0; i < HTMLmodifierOutputs.length; i++) {
-        HTMLmodifierOutputs[i] = modifierArray[i];
+    for (let i = 0; i < modifierArray.length; i++) {
+        HTMLmodifierOutputs[i].innerHTML = modifierArray[i];
+        HTMLscoreOutputs[i].innerHTML = inputedScores[i];
     }
     
     
