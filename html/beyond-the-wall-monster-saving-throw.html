@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css"
+        href="../css.css">
+
+  <title>Beyond the Wall Monster Saving Throw Tool</title>
+</head>
+
+<body>
+  <!-- As a link -->
+
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+
+  <span class="navbar-brand mb-0 "><h1 class="display-7">
+    Monster Saving Throws
+    <small class="text-muted">for Beyond the Wall</small>
+  </h1>
+  </span>
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+  </ul>
+</div>
+
+</nav>
+
+  
+  
+  <div class="container">
+    <div class="jumbotron mt-3">
+      <!-- Input monster level -->
+      <form id="form" action="/action_page.php">
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Monster Level</div>
+          </div>
+          <input type="number" min="1" max="10" class="form-control" placeholder="1-10" required>
+        </div>
+        <hr>
+        <!--Type of Saving Throw-->
+        <div class="btn-group-vertical w-100" role="group" aria-label="Savon Throw Type">
+          <button type="button" class="btn btn-secondary" onclick="poison()">☠️ Poison Saving Throw</button>
+          <button type="button" class="btn btn-secondary" onclick="breath()"> 🐲 Breath Weapon Saving Throw</button>
+          <button type="button" class="btn btn-secondary" onclick="poly()">🐸 Polymorth Saving Throw</button>
+          <button type="button" class="btn btn-secondary" onclick="spell()">✨Spell Saving Throw</button>
+          <button type="button" class="btn btn-secondary" onclick="item()">🔮 Magic Item Saving Throw</button>
+        </div>
+        <!--Button-->
+      </form>
+      
+      <!--OUTPUT-->
+      <div class="alert mt-1" role="alert">
+      </div>
+    </div>
+
+    
+
+    <div class="jumbotron">
+      <button class="btn btn-outline-info btn-block" type="button" data-toggle="collapse" data-target="#table"
+        aria-expanded="false" aria-controls="table">
+        Show Beyond the Wall monster saving throw table
+      </button>
+      </p>
+      <div class="collapse" id="table">
+        <div class="card card-body">
+
+          <p>Roll a d20. If the result is equal or greater than the number on the table, the monster succeeds the saving
+            throw and is not affected by your action. If they fail, that is good for the player.</p>
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">lvl</th>
+                <th scope="col">☠️</th>
+                <th scope="col">🐲</th>
+                <th scope="col">🐸</th>
+                <th scope="col">✨</th>
+                <th scope="col">🔮</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>14</td>
+                <td>17</td>
+                <td>15</td>
+                <td>17</td>
+                <td>16</td>
+              </tr>
+
+              <tr>
+                <th scope="row">2</th>
+                <td>14</td>
+                <td>17</td>
+                <td>15</td>
+                <td>17</td>
+                <td>16</td>
+              </tr>
+
+              <tr>
+                <th scope="row">3</th>
+                <td>13</td>
+                <td>16</td>
+                <td>14</td>
+                <td>14</td>
+                <td>15</td>
+              </tr>
+
+              <tr>
+                <th scope="row">4</th>
+                <td>13</td>
+                <td>16</td>
+                <td>14</td>
+                <td>14</td>
+                <td>15</td>
+              </tr>
+
+              <tr>
+                <th scope="row">5</th>
+                <td>11</td>
+                <td>14</td>
+                <td>12</td>
+                <td>12</td>
+                <td>13</td>
+              </tr>
+
+              <tr>
+                <th scope="row">6</th>
+                <td>11</td>
+                <td>14</td>
+                <td>12</td>
+                <td>12</td>
+                <td>13</td>
+              </tr>
+
+              <tr>
+                <th scope="row">7</th>
+                <td>10</td>
+                <td>13</td>
+                <td>11</td>
+                <td>11</td>
+                <td>12</td>
+              </tr>
+
+              <tr>
+                <th scope="row">8</th>
+                <td>10</td>
+                <td>13</td>
+                <td>11</td>
+                <td>11</td>
+                <td>12</td>
+              </tr>
+
+              <tr>
+                <th scope="row">9</th>
+                <td>8</td>
+                <td>11</td>
+                <td>9</td>
+                <td>9</td>
+                <td>10</td>
+              </tr>
+
+              <tr>
+                <th scope="row">10</th>
+                <td>8</td>
+                <td>11</td>
+                <td>9</td>
+                <td>9</td>
+                <td>10</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="jumbotron mt-3 p-1">
+      <!--Credit-->
+      <p class="text-center m-0 p-0 footer-text">by <a href="https://twitter.com/Jouleys_">Jouleys</a>.
+      </div></p> 
+  </div>
+
+
+  <script src="../savingthrow.js"></script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
