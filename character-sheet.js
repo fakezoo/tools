@@ -1,7 +1,35 @@
 console.log("character-sheet.js connected!")
 
+// CALCULATE MODIFIERTS FROM STATS (random)
+var randomButton = document.getElementById("random");
+randomButton.addEventListener("click", function(){
+    // In dieses Array werden die Modifier später reingepusht
+    var modifierArray = []
+    var generatedScores = []
+
+    // a random number between 1 and  20 is created
+    for (let m = 0; m < 6; m++) {
+        var score = Math.trunc(Math.random() * 20 + 1);
+        generatedScores.push(score);
+    }
+
+    //aus Scores Modifier machen und in Modifier Array speichern
+    for (let i = 0; i < generatedScores.length; i++) {
+        var modifier = Math.floor((generatedScores[i] - 10) / 2);
+        modifierArray.push(modifier);
+    }
+
+    // Find all Modifier / Score Output HTML Elements 
+    var HTMLmodifierOutputs = document.getElementsByClassName("htmlModOutput");
+    var HTMLscoreOutputs = document.getElementsByClassName("htmlscoreOutput");
 
 
+    // Assign each their respective modifier
+    for (let i = 0; i < modifierArray.length; i++) {
+        HTMLmodifierOutputs[i].innerHTML = modifierArray[i];
+        HTMLscoreOutputs[i].innerHTML = generatedScores[i];
+    }
+})
 
 
 
@@ -48,18 +76,6 @@ function stats() {
         HTMLmodifierOutputs[i].innerHTML = modifierArray[i];
         HTMLscoreOutputs[i].innerHTML = inputedScores[i];
     }
-
-
-
-    // Find all Score Output HTML Elements by selecting all small in .card-footer in .outputCard
-
-
-
-    // var strModOutput = document.querySelector('#strModOutput')
-    // var strScoreOutput = document.querySelector('#strScoreOutput')
-
-    // strModOutput.innerHTML = strMod;
-    // strScoreOutput = strScore;
 }
 
 
@@ -88,9 +104,8 @@ function nom() {
     classOutput.innerHTML = klasse;
     storyOutput.innerHTML = story;
 
-
+ 
 }
-
 
 
 function fear() {

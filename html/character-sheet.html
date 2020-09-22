@@ -119,21 +119,8 @@
                                 <small class="text-muted htmlscoreOutput" id="conScoreOutput">0</small>
                             </div>
                         </div>
-
-
-
-
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-
-                                <!-- Button abilityModal -->
-                                <button type="button" class="btn btn-dark btn-block" data-toggle="modal"
-                                    data-target="#abilityModal">
-                                    <i class="fas fa-pen"></i>
-                                </button>
-                            </li>
-                        </ul>
                     </div>
+
 
                     <div class="col-6">
                         <div class="card text-center bg-light outputCard">
@@ -167,10 +154,24 @@
                             </div>
                         </div>
 
-
-
                     </div>
+
                 </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+
+                        <!-- Button abilityModal -->
+                        <button type="button" class="btn btn-dark btn-block" data-toggle="modal"
+                            data-target="#abilityModal">
+                            <i class="fas fa-pen"></i>
+                        </button>
+
+                        <!-- Button ability Random -->
+                        <button type="button" class="btn btn-dark btn-block" id="random" data-target="#abilityModal">
+                            <i class="fas fa-dice"></i>
+                        </button>
+                    </li>
+                </ul>
             </div>
 
             <!--FEARS-->
@@ -190,10 +191,10 @@
                         <h5 class="card-title">0</h5>
                     </div>
                 </div>
+
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Fears: <span id="fearOutput"></span></li>
                     <li class="list-group-item">Dreams: <span id="dreamOutput"></span></li>
-                    <li class="list-group-item">Equipment: <span id="shopOutput"></span></li>
 
                     <li class="list-group-item">
 
@@ -203,11 +204,20 @@
                             <i class="fas fa-pen"></i>
                         </button>
 
-                         <!-- Button shopModal -->
-                         <button type="button" class="btn btn-dark btn-block" data-toggle="modal"
-                         data-target="#shopModal" onclick="enterShop()">
-                         <i class="fas fa-coins"></i> Shop
-                     </button>
+                    </li>
+                </ul>
+
+                <ul class="list-group list-group-flush">
+                   
+                    <li class="list-group-item">Equipment: <span id="shopOutput"></span></li>
+
+                    <li class="list-group-item">
+
+                        <!-- Button shopModal -->
+                        <button type="button" class="btn btn-dark btn-block" data-toggle="modal"
+                            data-target="#shopModal" onclick="enterShop()">
+                            <i class="fas fa-coins"></i> Shop
+                        </button>
 
                     </li>
                 </ul>
