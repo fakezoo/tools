@@ -37,7 +37,7 @@ function stats() {
         var modifier = Math.floor((inputedScores[i] - 10) / 2);
         modifierArray.push(modifier);
     }
-   
+
     // Find all Modifier / Score Output HTML Elements 
     var HTMLmodifierOutputs = document.getElementsByClassName("htmlModOutput");
     var HTMLscoreOutputs = document.getElementsByClassName("htmlscoreOutput");
@@ -48,11 +48,11 @@ function stats() {
         HTMLmodifierOutputs[i].innerHTML = modifierArray[i];
         HTMLscoreOutputs[i].innerHTML = inputedScores[i];
     }
-    
-    
+
+
 
     // Find all Score Output HTML Elements by selecting all small in .card-footer in .outputCard
-   
+
 
 
     // var strModOutput = document.querySelector('#strModOutput')
@@ -92,7 +92,6 @@ function nom() {
 }
 
 
-var balance = 420;
 
 function fear() {
     // get inputed values
@@ -100,20 +99,97 @@ function fear() {
 
     var fear = fearForm.elements[0].value;
     var dream = fearForm.elements[1].value;
-    var shop = fearForm.elements[2].value;
 
-    console.log(fear, dream, shop)
+    console.log(fear, dream)
 
 
 
     // return modifiers
     var fearOutput = document.querySelector('#fearOutput')
     var dreamOutput = document.querySelector('#dreamOutput')
-    var shopOutput = document.querySelector('#shopOutput')
 
 
     fearOutput.innerHTML = fear;
     dreamOutput.innerHTML = dream;
-    shopOutput.innerHTML = shop;
 
 }
+
+
+///SHOP * SHOP * SHOP///
+var balance = 420
+var itemList = [];
+var shopOutput = document.getElementById("shopOutput");
+var resetButton = document.getElementById("reset");
+
+function enterShop() {
+
+    var balanceOutput = document.getElementById("balance");
+
+    // Alle Shopbuttons aus HTML Holen
+    var shopButtons = document.querySelectorAll(".shopButton");
+    for (var i = 0, l = shopButtons.length; i < l; i++) {
+        // Das first Child jedes Buttons ist der Text
+        var item = shopButtons[i].firstChild.nodeValue
+        //In Array itemsList speichern
+        itemList.push(item);
+    }
+
+
+
+    //Das For und der eventlistener besagt nur, dass alle Buttons, die function drauf geslappt bekommen
+    for (var j = 0; j < itemList.length; j++) {
+        shopButtons[j].addEventListener("click", function () {
+            // Holt den Buttontext und macht ihn zu ner variable
+            var selectedItem = this.firstChild.nodeValue
+            // Sucht wo in der Itemlist der soeben geholte Buttontext zu finden ist
+            // Der Platz im Array von dem Item = der Preis, gerundet und mit random Zahlen verrechnet, damit es realistisch aussieht
+            let price = Math.round(((itemList.indexOf(selectedItem) * 5.9) + 1.2) * 100) / 100;
+            console.log(`${selectedItem} costs ${price} $`);
+
+           
+
+            //Button der geklickt wurde disablen
+            this.disabled= true;
+
+            //solange User nicht über Budget ist wird bei jedem Klick...
+            if (balance > price) {
+                // die Balance und Balance Anzeige geupdated
+                balance = balance - price;
+                balanceOutput.innerHTML = Math.round(balance*100)/100
+                
+                // ein span element namens itemTray  created
+                var itemTray = document.createElement("span");
+
+                //das aktuelle item in den item tray gelegt
+                itemTray.innerHTML = selectedItem;
+
+                //das tray mitsamt inhalt an das span shopOutput angehängt
+                shopOutput.prepend(itemTray);
+
+            } else {
+                balanceOutput.classList.add("alert-danger");
+            }
+
+            resetButton.addEventListener("click", function(){
+                console.log("resetting")
+                balance = 420;
+                balanceOutput.classList.remove("alert-danger")
+                while (shopOutput.hasChildNodes()) {
+                    shopOutput.removeChild(shopOutput.firstChild);
+                }
+            })
+        })
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+
+

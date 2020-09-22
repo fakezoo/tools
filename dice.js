@@ -70,7 +70,7 @@ function doit() {
 /// make it so you can wipe every thing clean and roll anew
 function reset() {
 
-
+    console.log("resetting")
     // remove p's from previous rounds
     while (container.hasChildNodes()) {
         container.removeChild(container.firstChild);

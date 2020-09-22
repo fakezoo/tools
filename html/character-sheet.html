@@ -32,14 +32,17 @@
                 </h1>
             </span>
             <div class="dropdown ">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                More Tools </button>
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More Tools </button>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="./character-sheet.html"><i class="far fa-smile"></i> Emoji Character Sheet</a>
-                  <a class="dropdown-item" href="./dice-roller.html"><i class="fas fa-dice"></i> Dice Roller</a>
-                  <a class="dropdown-item" href="./beyond-the-wall-monster-saving-throw.html"><i class="fas fa-shield-alt"></i> Saving Throws (BtW)</a>
+                    <a class="dropdown-item" href="./character-sheet.html"><i class="far fa-smile"></i> Emoji Character
+                        Sheet</a>
+                    <a class="dropdown-item" href="./dice-roller.html"><i class="fas fa-dice"></i> Dice Roller</a>
+                    <a class="dropdown-item" href="./beyond-the-wall-monster-saving-throw.html"><i
+                            class="fas fa-shield-alt"></i> Saving Throws (BtW)</a>
                 </div>
-              </div>
+            </div>
         </div>
 
     </nav>
@@ -83,85 +86,94 @@
         <div class="card-deck">
 
             <div class="card">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="card text-center bg-light outputCard">
+                            <div class="card-header">Strenght</div>
+                            <div class="card-body">
+                                <h5 class="card-title htmlModOutput" id="strModOutput">0</h5>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted htmlscoreOutput" id="strScoreOutput">0</small>
+                            </div>
+                        </div>
 
-                <div class="card text-center bg-light outputCard">
-                    <div class="card-header">Strenght</div>
-                    <div class="card-body">
-                        <h5 class="card-title htmlModOutput" id="strModOutput">0</h5>
+
+                        <div class="card text-center bg-light outputCard">
+                            <div class="card-header">Dexterity</div>
+                            <div class="card-body">
+                                <h5 class="card-title htmlModOutput" id="dexModOutput">0</h5>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted htmlscoreOutput" id="dexScoreOutput">0</small>
+                            </div>
+                        </div>
+
+
+                        <div class="card text-center bg-light outputCard">
+                            <div class="card-header">Constitution</div>
+                            <div class="card-body">
+                                <h5 class="card-title htmlModOutput" id="conModOutput">0</h5>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted htmlscoreOutput" id="conScoreOutput">0</small>
+                            </div>
+                        </div>
+
+
+
+
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+
+                                <!-- Button abilityModal -->
+                                <button type="button" class="btn btn-dark btn-block" data-toggle="modal"
+                                    data-target="#abilityModal">
+                                    <i class="fas fa-pen"></i>
+                                </button>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted htmlscoreOutput" id="strScoreOutput">0</small>
+
+                    <div class="col-6">
+                        <div class="card text-center bg-light outputCard">
+                            <div class="card-header">Intelligence</div>
+                            <div class="card-body">
+                                <h5 class="card-title htmlModOutput" id="intModOutput">0</h5>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted htmlscoreOutput" id="intScoreOutput">0</small>
+                            </div>
+                        </div>
+
+
+                        <div class="card text-center bg-light outputCard">
+                            <div class="card-header">Wisdom</div>
+                            <div class="card-body">
+                                <h5 class="card-title htmlModOutput" id="wisModOutput">0</h5>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted htmlscoreOutput" id="wisScoreOutput">0</small>
+                            </div>
+                        </div>
+
+                        <div class="card text-center bg-light outputCard">
+                            <div class="card-header">Charisma</div>
+                            <div class="card-body">
+                                <h5 class="card-title htmlModOutput" id="chaModOutput">0</h5>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted htmlscoreOutput" id="chaScoreOutput">0</small>
+                            </div>
+                        </div>
+
+
+
                     </div>
                 </div>
-
-
-                <div class="card text-center bg-light outputCard">
-                    <div class="card-header">Dexterity</div>
-                    <div class="card-body">
-                        <h5 class="card-title htmlModOutput" id="dexModOutput">0</h5>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted htmlscoreOutput" id="dexScoreOutput">0</small>
-                    </div>
-                </div>
-
-
-                <div class="card text-center bg-light outputCard">
-                    <div class="card-header">Constitution</div>
-                    <div class="card-body">
-                        <h5 class="card-title htmlModOutput" id="conModOutput">0</h5>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted htmlscoreOutput" id="conScoreOutput">0</small>
-                    </div>
-                </div> 
-
-
-                <div class="card text-center bg-light outputCard">
-                    <div class="card-header">Intelligence</div>
-                    <div class="card-body">
-                        <h5 class="card-title htmlModOutput" id="intModOutput">0</h5>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted htmlscoreOutput" id="intScoreOutput">0</small>
-                    </div>
-                </div>
-
-
-                <div class="card text-center bg-light outputCard">
-                    <div class="card-header">Wisdom</div>
-                    <div class="card-body">
-                        <h5 class="card-title htmlModOutput" id="wisModOutput">0</h5>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted htmlscoreOutput" id="wisScoreOutput">0</small>
-                    </div>
-                </div>
-
-                <div class="card text-center bg-light outputCard">
-                    <div class="card-header">Charisma</div>
-                    <div class="card-body">
-                        <h5 class="card-title htmlModOutput" id="chaModOutput">0</h5>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted htmlscoreOutput" id="chaScoreOutput">0</small>
-                    </div>
-                </div>
-
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-
-                        <!-- Button abilityModal -->
-                        <button type="button" class="btn btn-dark btn-block" data-toggle="modal"
-                            data-target="#abilityModal">
-                            <i class="fas fa-pen"></i>
-                        </button>
-                    </li>
-                </ul>
-
             </div>
 
-            <!--AC HP-->
+            <!--FEARS-->
             <div class="card">
 
                 <div class="card text-center outputCard bg-light">
@@ -177,7 +189,6 @@
                     <div class="card-body">
                         <h5 class="card-title">0</h5>
                     </div>
-
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Fears: <span id="fearOutput"></span></li>
@@ -185,17 +196,25 @@
                     <li class="list-group-item">Equipment: <span id="shopOutput"></span></li>
 
                     <li class="list-group-item">
+
                         <!-- Button fearModal -->
                         <button type="button" class="btn btn-dark btn-block" data-toggle="modal"
                             data-target="#fearModal">
                             <i class="fas fa-pen"></i>
                         </button>
+
+                         <!-- Button shopModal -->
+                         <button type="button" class="btn btn-dark btn-block" data-toggle="modal"
+                         data-target="#shopModal" onclick="enterShop()">
+                         <i class="fas fa-coins"></i> Shop
+                     </button>
+
                     </li>
                 </ul>
             </div>
-        </div>
 
-    </div>
+
+        </div>
     </div>
     </div>
 
@@ -291,7 +310,6 @@
                 </div>
                 <div class="modal-body">
                     <!--MODIFIERS-->
-
                     <form id="form">
 
                         <!--str-->
@@ -364,16 +382,15 @@
 
                     </form>
 
-                </div>
 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="stats()">Calculate Modifiers</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="stats()">Calculate Modifiers</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
 
 
     <!-- FEARMODAL -->
@@ -408,52 +425,16 @@
                         <div class="form-group">
                             <label for="dreamInput">What is your ulimate goal?</label>
                             <select multiple class="form-control" id="dreamInput">
-                                <option>🗡️🪓</option>
-                                <option>🥋👊</option>
-                                <option>💬🕊</option>
-                                <option>🤙🎷</option>
-                                <option>🔮✨</option>
-                                <option>🏹🎯</option>
-                                <option>🙏✝</option>
-                                <option>💣💥</option>
+                                <option>💰🤑</option>
+                                <option>👩‍👩‍👧‍👦🍼</option>
+                                <option>🌏🕊</option>
+                                <option>🌏💀</option>
+                                <option>💋🍆</option>
+                                <option>🏆🥇</option>
                             </select>
                         </div>
 
 
-                        <hr>
-                        <div class="">
-                            <p>Buy some stuff. You have 420€</p>
-                            <button type="button" class="btn btn-outline-dark shopButton">🗡️</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">🪓</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">🏹</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">🔪</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">⚔</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">🛡</button>
-
-                            <button type="button" class="btn btn-outline-dark shopButton">🧱</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">💣</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">🧨</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">💎</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">🔮</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">⚗</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">🩸</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">🪕</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">🎷</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">🧹</button>
-
-                            <button type="button" class="btn btn-outline-dark shopButton">🧭</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">🕯</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">📔</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">📜</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">🖋</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">🗝</button>
-
-                            <button type="button" class="btn btn-outline-dark shopButton">🚬</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">🐎</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">🌿</button>
-                            <button type="button" class="btn btn-outline-dark shopButton">🔨</button>
-
-                        </div>
 
 
                     </form>
@@ -468,7 +449,64 @@
     </div>
 
 
+    <!--SHOP MODAL-->
+    <div class="modal fade" id="shopModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"> Buy some stuff. You have <span id="balance">420</span> coins. </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
 
+                    <form id="shopForm">
+                        <div class="">
+                            <button type="button" class="btn btn-outline-dark shopButton">🗡️</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🪓</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🏹</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🔪</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">⚔</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🛡</button>
+
+                            <button type="button" class="btn btn-outline-dark shopButton">🧱</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">💣</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🧨</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">💎</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🔮</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">⚗</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🩸</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🌿</button>
+
+                            <button type="button" class="btn btn-outline-dark shopButton">🪕</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🎷</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🧹</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🧭</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🕯</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">📔</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">📜</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🖋</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🗝</button>
+
+                            <button type="button" class="btn btn-outline-dark shopButton">🚬</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🐎</button>
+                            <button type="button" class="btn btn-outline-dark shopButton">🔨</button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="reset">Reset</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Accept</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--MY JS-->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
