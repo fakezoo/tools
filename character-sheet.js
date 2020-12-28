@@ -1,8 +1,9 @@
 console.log("character-sheet.js connected!")
 
 // CALCULATE MODIFIERTS FROM STATS (random)
-var randomButton = document.getElementById("random");
-randomButton.addEventListener("click", function(){
+var score = randomStats();
+
+function randomStats() {
     // In dieses Array werden die Modifier später reingepusht
     var modifierArray = []
     var generatedScores = []
@@ -29,11 +30,22 @@ randomButton.addEventListener("click", function(){
         HTMLmodifierOutputs[i].innerHTML = modifierArray[i];
         HTMLscoreOutputs[i].innerHTML = generatedScores[i];
     }
-})
+
+    score = {
+        Strenght: generatedScores[0],
+        Dexterity: generatedScores[1],
+        Constitution: generatedScores[2],
+        Intelligence: generatedScores[3],
+        Wisdom: generatedScores[4],
+        Charisma: generatedScores[5]
+    }
+    return score
+}
 
 
 
 // CALCULATE MODIFIERTS FROM STATS
+var score = stats();
 function stats() {
 
     // In dieses Array werden die Modifier später reingepusht
@@ -76,9 +88,19 @@ function stats() {
         HTMLmodifierOutputs[i].innerHTML = modifierArray[i];
         HTMLscoreOutputs[i].innerHTML = inputedScores[i];
     }
+
+    var score = {
+        Strenght: strScore,
+        Dexterity: dexScore,
+        Constitution: conScore,
+        Intelligence: intScore,
+        Wisdom: wisScore,
+        Charisma: chaScore
+    }
+    return score
 }
 
-
+var creation = nom();
 function nom() {
     // get inputed values
     var nameForm = document.getElementById("nameForm");
@@ -87,10 +109,6 @@ function nom() {
     var race = nameForm.elements[1].value;
     var klasse = nameForm.elements[2].value;
     var story = nameForm.elements[3].value;
-
-    console.log(nom, race, klasse, story)
-
-
 
     // return modifiers
     var nameOutput = document.querySelector('#nameOutput')
@@ -104,10 +122,19 @@ function nom() {
     classOutput.innerHTML = klasse;
     storyOutput.innerHTML = story;
 
- 
+    creation = {
+        name: nom,
+        species: race,
+        class: klasse,
+        background: story,
+    }
+
+    console.log(creation)
+    return creation
 }
 
 
+var psychology = fear();
 function fear() {
     // get inputed values
     var fearForm = document.getElementById("fearForm");
@@ -115,96 +142,30 @@ function fear() {
     var fear = fearForm.elements[0].value;
     var dream = fearForm.elements[1].value;
 
-    console.log(fear, dream)
-
-
-
-    // return modifiers
+    // find outputs
     var fearOutput = document.querySelector('#fearOutput')
     var dreamOutput = document.querySelector('#dreamOutput')
-
-
     fearOutput.innerHTML = fear;
     dreamOutput.innerHTML = dream;
 
-}
-
-
-///SHOP * SHOP * SHOP///
-var balance = 420
-var itemList = [];
-var shopOutput = document.getElementById("shopOutput");
-var resetButton = document.getElementById("reset");
-
-function enterShop() {
-
-    var balanceOutput = document.getElementById("balance");
-
-    // Alle Shopbuttons aus HTML Holen
-    var shopButtons = document.querySelectorAll(".shopButton");
-    for (var i = 0, l = shopButtons.length; i < l; i++) {
-        // Das first Child jedes Buttons ist der Text
-        var item = shopButtons[i].firstChild.nodeValue
-        //In Array itemsList speichern
-        itemList.push(item);
+    psychology = {
+        hope: dream,
+        angst: fear
     }
 
-
-
-    //Das For und der eventlistener besagt nur, dass alle Buttons, die function drauf geslappt bekommen
-    for (var j = 0; j < itemList.length; j++) {
-        shopButtons[j].addEventListener("click", function () {
-            // Holt den Buttontext und macht ihn zu ner variable
-            var selectedItem = this.firstChild.nodeValue
-            // Sucht wo in der Itemlist der soeben geholte Buttontext zu finden ist
-            // Der Platz im Array von dem Item = der Preis, gerundet und mit random Zahlen verrechnet, damit es realistisch aussieht
-            let price = Math.round(((itemList.indexOf(selectedItem) * 5.9) + 1.2) * 100) / 100;
-            console.log(`${selectedItem} costs ${price} $`);
-
-           
-
-            //Button der geklickt wurde disablen
-            this.disabled= true;
-
-            //solange User nicht über Budget ist wird bei jedem Klick...
-            if (balance > price) {
-                // die Balance und Balance Anzeige geupdated
-                balance = balance - price;
-                balanceOutput.innerHTML = Math.round(balance*100)/100
-                
-                // ein span element namens itemTray  created
-                var itemTray = document.createElement("span");
-
-                //das aktuelle item in den item tray gelegt
-                itemTray.innerHTML = selectedItem;
-
-                //das tray mitsamt inhalt an das span shopOutput angehängt
-                shopOutput.prepend(itemTray);
-
-            } else {
-                balanceOutput.classList.add("alert-danger");
-            }
-
-            resetButton.addEventListener("click", function(){
-                console.log("resetting")
-                balance = 420;
-                balanceOutput.classList.remove("alert-danger")
-                while (shopOutput.hasChildNodes()) {
-                    shopOutput.removeChild(shopOutput.firstChild);
-                }
-            })
-        })
-    }
-
-    
+    console.log(psychology)
+    return psychology
 }
 
 
 
 
-
-
-
-
-
-
+function compile() {
+    var character =
+    {
+        creation: creation,
+        score: score,
+        psychology: psychology,
+    }
+    console.log(character)
+}

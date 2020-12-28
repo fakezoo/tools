@@ -47,6 +47,7 @@
 
     </nav>
 
+    <button type="button" class="btn btn-danger" onclick="compile()">Compile</button>
 
     <div class="container mb-3 mt-3">
 
@@ -167,7 +168,7 @@
                         </button>
 
                         <!-- Button ability Random -->
-                        <button type="button" class="btn btn-dark btn-block" id="random" data-target="#abilityModal">
+                        <button type="button" class="btn btn-dark btn-block" id="random" onclick="randomStats()">
                             <i class="fas fa-dice"></i>
                         </button>
                     </li>
@@ -208,7 +209,7 @@
                 </ul>
 
                 <ul class="list-group list-group-flush">
-                   
+
                     <li class="list-group-item">Equipment: <span id="shopOutput"></span></li>
 
                     <li class="list-group-item">
@@ -232,11 +233,10 @@
     </div>
     </div>
     </div>
-    <script src="../character-sheet.js"></script>
 
 
     <!-------MODALS------>
-    <!-- Name -->
+    <!-- NAMEMODAL -->
     <div class="modal fade" id="nameModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -302,7 +302,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="nom()">Save changes</button>
+                    <button type="button" class="btn btn-primary" onclick="nom()" data-dismiss="modal">Save
+                        changes</button>
                 </div>
             </div>
         </div>
@@ -452,7 +453,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="fear()">Save changes</button>
+                    <button type="button" class="btn btn-primary" onclick="fear()" data-dismiss="modal">Save
+                        changes</button>
                 </div>
             </div>
         </div>
@@ -509,14 +511,17 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="reset">Reset</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Accept</button>
+                    <button type="button" class="btn btn-secondary" id="reset" onclick="reset()">Refund</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Leave Shop</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!--MY JS-->
+    <script src="../character-sheet.js"></script>
+    <script src="../shop.js"></script>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
